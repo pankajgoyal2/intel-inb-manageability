@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+echo $DOCKER_USERNAME
+echo "In run-quicker.sh"
 ./setup.sh
 
 . ../integration-common/util/tc-messages.sh
