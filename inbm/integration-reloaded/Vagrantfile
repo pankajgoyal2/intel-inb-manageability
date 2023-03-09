@@ -33,6 +33,7 @@ Vagrant.configure("2") do |config|
 
   config.vagrant.sensitive = [ENV["DOCKER_PASSWORD"]]
   puts ENV["DOCKER_PASSWORD"]
+  puts "Pankaj"
   config.vm.provision "shell", inline: "sudo apt-get update && sudo apt-get -y install gnupg2 pass && echo " + ENV["DOCKER_PASSWORD"] + " | sudo docker login -u " + ENV["DOCKER_USERNAME"] + " --password-stdin"
   config.vm.provision "file", source: "./snapperfilter.txt", 
     destination: "/tmp/snapperfilter.txt"
